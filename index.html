@@ -169,6 +169,34 @@
   .lb .prev{left:18px;top:50%;transform:translateY(-50%);padding:20px}
   .lb .next{right:18px;top:50%;transform:translateY(-50%);padding:20px}
 
+  /* ---------- PARK SECTION ---------- */
+  .park{
+    background:#f3f0e9;
+    border-top:1px solid var(--line);
+  }
+  .park-inner{
+    max-width:var(--max);margin:0 auto;
+    padding:84px 32px 88px;
+    display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;
+  }
+  @media(max-width:820px){.park-inner{grid-template-columns:1fr;gap:36px;padding:60px 32px 64px}}
+  .park .k{font-size:.72rem;text-transform:uppercase;letter-spacing:.28em;color:var(--wood)}
+  .park h2{
+    font-family:'Cormorant Garamond';font-weight:500;
+    font-size:clamp(1.9rem,4.2vw,2.7rem);line-height:1.08;margin-top:8px;
+  }
+  .park h2 em{font-style:italic;color:var(--ocean)}
+  .park p{margin-top:20px;color:var(--soft);font-size:1.04rem;max-width:46ch}
+  .park ul{list-style:none;margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:12px 24px}
+  @media(max-width:480px){.park ul{grid-template-columns:1fr}}
+  .park li{
+    font-size:.96rem;color:var(--ink);padding-left:20px;position:relative;
+  }
+  .park li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--ocean)}
+  .park-img{border-radius:2px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 14px 40px rgba(31,58,77,.14)}
+  .park-img img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .park-img:hover img{transform:scale(1.04)}
+
   /* ---------- FOOTER ---------- */
   footer{
     background:var(--navy);color:#dfe7ec;text-align:center;
@@ -189,25 +217,25 @@
 <header class="hero">
   <img src="images/final_27.jpg" alt="The pool at twilight, lit blue against the warm glow of the house">
   <div class="hero-inner">
-    <div class="eyebrow">A private home above Laguna Beach</div>
-    <h1>Your week in the hills, just the two of you.</h1>
+    <div class="eyebrow">A private home in Laguna Beach</div>
     <div class="dates">July 26 – August 1, 2026</div>
   </div>
   <div class="scrollcue" aria-hidden="true">↓</div>
 </header>
 
 <section class="intro">
-  <p class="lead">A light-filled hillside house where the days run from <em>morning coffee on the pergola</em> to a quiet swim under the evening lights.</p>
-  <p>This is our home, and for one week it's yours. Below is a walk through every room and corner, so you know exactly what to expect when you arrive. Settle in, slow down, and let Laguna do the rest.</p>
+  <p class="lead">A light-filled retreat where the days run from <em>morning coffee by the fountain</em> to a quiet swim under the stars.</p>
+  <p>Below is a walk through every room and corner, so you know exactly what to expect when you arrive. Settle in, slow down, and let Laguna do the rest.</p>
   <div class="rule"></div>
 </section>
 
 <div class="facts">
   <div class="fact"><b>2</b><span>Guests</span></div>
-  <div class="fact"><b>7</b><span>Nights</span></div>
+  <div class="fact"><b>6</b><span>Nights</span></div>
   <div class="fact"><b>Pool</b><span>Private &amp; heated</span></div>
-  <div class="fact"><b>Ocean</b><span>Hillside views</span></div>
-  <div class="fact"><b>Quiet</b><span>No pets · no kids</span></div>
+  <div class="fact"><b>4 Bd</b><span>2.5 Baths</span></div>
+  <div class="fact"><b>Beach</b><span>1 mile away</span></div>
+  <div class="fact"><b>Quiet</b><span>Close to park &amp; trails</span></div>
 </div>
 
 <div class="section-label">
@@ -216,6 +244,28 @@
 </div>
 
 <main class="gallery" id="gallery"></main>
+
+<section class="park">
+  <div class="park-inner">
+    <div class="park-copy">
+      <div class="k">The neighborhood</div>
+      <h2>Minutes from <em>Top of the World</em></h2>
+      <p>The house sits just below Alta Laguna Park — the hilltop locals call "Top of the World," one of the highest points in Laguna Beach. It's a short walk up, and the views stretch from the open ocean and Catalina all the way back across the canyons.</p>
+      <p>From the park's edge you can step straight onto the trails of Aliso and Wood Canyons Wilderness Park, then come home for a swim. A rare mix of coastline and quiet hillside, all within reach.</p>
+      <ul>
+        <li>Panoramic ocean &amp; canyon views</li>
+        <li>Miles of walking and hiking trails</li>
+        <li>Tennis and pickleball courts</li>
+        <li>Picnic tables and grassy lawns</li>
+        <li>Open late for sunset</li>
+        <li>The beach, about a mile away</li>
+      </ul>
+    </div>
+    <div class="park-img">
+      <img loading="lazy" src="images/final_9.jpg" alt="Garden path under the pergola, with the hillside beyond">
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="ttl">We hope you'll feel right at home.</div>
@@ -252,7 +302,6 @@ const PHOTOS = [
   ["final_41.jpg","A guest bath"],
   ["final_22.jpg","The powder room"],
   ["final_3.jpg","Through the garden gate"],
-  ["final_4.jpg","The pergola walk toward the view"],
   ["final_9.jpg","Garden paths"],
   ["final_1.jpg","The pool by day"],
   ["final_23.jpg","Room to stretch out"],
